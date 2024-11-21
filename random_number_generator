@@ -1,0 +1,28 @@
+import tkinter as tk
+import random
+
+# Function to generate random number
+def generate_random_number():
+    random_number = random.randint(0, 10)  # Generate a number between 0 and 10
+    result_label.config(text=f"Random Number: {random_number}")  # Display the result in the label
+
+# Create the main application window
+app = tk.Tk()
+app.title("Random Number Generator")
+app.geometry("300x150")  # Set window size
+
+# Create and pack the widgets
+# Textbox (optional, used for custom range input if desired)
+instruction_label = tk.Label(app, text="Click the button to generate a random number:")
+instruction_label.pack(pady=10)
+
+# Button to generate the random number
+generate_button = tk.Button(app, text="Generate", command=generate_random_number)
+generate_button.pack(pady=5)
+
+# Label to display the generated random number
+result_label = tk.Label(app, text="Random Number: -", font=("Arial", 14))
+result_label.pack(pady=10)
+
+# Run the Tkinter event loop
+app.mainloop()
